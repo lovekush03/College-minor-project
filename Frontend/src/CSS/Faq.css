@@ -1,0 +1,112 @@
+
+/* .container{
+    max-width:70vw;
+} */
+.font-heading{
+    font-family: "Lato", sans-serif;
+}
+.font-text{
+    font-family: "Geologica",sans-serif;
+}
+.heading{
+    font-weight:600;
+}
+.text{
+    font-weight:200;
+}
+
+/* CHAT GPT CSS FOR RESPONSIVE BEHAVIOUR */
+
+
+/* General Styles */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  h1.font-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Accordion Button Styles */
+  .accordion-button {
+    font-size: 1.1rem;
+    padding: 1rem;
+    color: #333;
+    background-color: #f8f9fa;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #e9ecef;
+    color: #000;
+  }
+  
+  .accordion-button.collapsed:hover {
+    background-color: #e2e6ea;
+  }
+  
+  /* Accordion Body Styles */
+  .accordion-body {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* Active pseudo class colour Change */
+
+  .accordion-button:focus {
+    box-shadow: none; /* Removes the default Bootstrap box shadow */
+    border-color: #ff5722; /* Change to your desired color */
+    outline: none; /* Removes the outline */
+  }
+  
+  /* Add a border color for when the accordion is active (expanded) */
+  .accordion-button:not(.collapsed) {
+    background-color: #e9ecef;
+    border-color: #ff5722; /* Same as your focus color */
+  }
+  
+  /* Customize the hover state if needed */
+  .accordion-button:hover {
+    border-color: #ff5722; /* Optional: Matches focus color */
+  }
+
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    h1.font-heading {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .accordion-button {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+  
+    .accordion-body {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    h1.font-heading {
+      font-size: 1.25rem;
+    }
+  
+    .accordion-button {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+  
+    .accordion-body {
+      font-size: 0.85rem;
+    }
+  }
+  
+
+
+

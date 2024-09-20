@@ -1,0 +1,107 @@
+*{
+    overflow-x: hidden;
+} 
+ 
+ .font-heading{
+font-family: "Lato", sans-serif;
+}
+.font-text{
+    font-family: "Geologica",sans-serif;
+    }
+
+    
+    .hero-section {
+    /* background-color: #f9f9f9; */
+    padding: 5rem 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight:700;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 200;
+  }
+
+  .btn .btn-primary .btn-lg{
+    width:40vw;
+  }
+  
+  .cta-section {
+    background-color: #4a3aff;  
+    color: #fff;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .comm-btn{
+    width:20vw;
+    border-radius: 20px;
+    font-size:1rem;
+    font-weight: 300;
+  }
+
+  .img-fluid{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius:10px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Media queries for smaller screens */
+  @media (max-width: 1000px) {
+    .font-heading {
+      font-size: 2rem;
+    }
+  
+    .font-text {
+      font-size: 1rem;
+    }
+  
+    .hero-section {
+      padding: 3rem 0;
+    }
+    .row {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      
+      .comm-btn{
+        font-size:1rem;
+        width: 30vw;
+        align-self: center;
+      }
+  }
+  @media (max-width: 700px){
+    .comm-btn{
+        width: 50vw;
+    }
+  }
+  @media (max-width: 576px) {
+    .font-heading {
+      font-size: 1.5rem;
+    }
+  
+    .font-text {
+      font-size: 0.875rem;
+    }
+  
+    .hero-section {
+      padding: 2rem 0;
+    }
+    .comm-btn{
+        font-size:0.875rem;
+      }
+  }
+  @media (max-width: 370px){
+    .comm-btn{
+        width: 55vw;
+    }
+  }
