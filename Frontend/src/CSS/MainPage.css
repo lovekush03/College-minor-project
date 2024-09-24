@@ -1,0 +1,78 @@
+/* MainPage.css */
+.main-page-container {
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between text/buttons and the GIF */
+  margin: 0;
+  padding: 20px; /* Add padding to the container */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  background-image: url("../assets/wp7795842-desktop-4k-minimal-wallpapers.png"); /* Path to your background image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+.text-and-buttons {
+  display: flex;
+  flex-direction: column; /* Stack text and buttons vertically */
+  justify-content: center; /* Center text and buttons vertically */
+  align-items: flex-start; /* Align items to the left */
+  margin-right: 20px; /* Space between text/buttons and the GIF */
+  margin-top: 0; /* Reduce top margin to 0 */
+  z-index: 1; /* Ensure text and buttons appear above the background */
+  color: #fff; /* White text color for contrast */
+}
+
+.text-and-buttons h1 {
+  font-size: 2rem; /* Adjust as needed */
+  margin-bottom: 20px; /* Space below the text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+}
+
+.buttons-container {
+  display: flex; /* Display buttons side by side */
+  gap: 20px; /* Space between buttons */
+  margin-top: 10px; /* Reduce space above the buttons */
+}
+
+.explore-button,
+.jobs-button {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 50%; /* Circular buttons */
+  width: 100px; /* Increased width for larger buttons */
+  height: 100px; /* Increased height for larger buttons */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  font-size: 1.2rem; /* Larger button text size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.explore-button {
+  background-color: #28a745; /* Green background */
+}
+
+.jobs-button {
+  background-color: #ffc107; /* Yellow background */
+}
+
+.explore-button:hover,
+.jobs-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.giphy-iframe {
+  width: 480px; /* Fixed width for the GIF */
+  height: 480px; /* Fixed height for the GIF */
+  border: 5px solid #ffcc00; /* Stylish border */
+  border-radius: 10px; /* Rounded corners for the border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for added depth */
+  z-index: 1; /* Ensure GIF appears above the background */
+}

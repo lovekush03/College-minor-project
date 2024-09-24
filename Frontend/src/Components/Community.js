@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../CSS/Community.css";
-import CommunityImage from "../Images/Community.jpg";
+import CommunityImage from "../assets/Community.jpg";
 function Community() {
   const textRef = useRef(null);
   const imageRef = useRef(null);

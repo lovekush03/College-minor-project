@@ -1,0 +1,83 @@
+.font-heading{
+    font-family: "Lato", sans-serif;
+}
+.font-text{
+    font-family: "Geologica",sans-serif;
+}
+.footer-logo-container {
+    background-color: black;
+    width: max-content;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow-y: hidden;
+}
+.footer-logo {
+    margin: 2px 10px;
+    font-size: 4rem;
+    overflow-y: hidden;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+.footer-logo-text{
+    margin-top:-12px;
+    font-size:15px;
+    margin-bottom: -0.1px;
+}
+
+/* ICONS */
+
+.facebook{
+    border-radius: 5px;
+    padding:0px 10px;
+}
+.facebook:hover{
+    background-color: #4267B2;
+    cursor:pointer
+}
+.twitter{
+    border-radius: 5px;
+}
+.twitter:hover{
+    background-color:#1DA1F2;
+}
+.linkedin{
+    border-radius: 5px;
+}
+.linkedin:hover{
+    background-color: #0A66C2;
+    cursor:pointer
+}
+
+/* LIST OF LINKS */
+
+.footer-ul{
+    margin-left: 0; /* Remove the default left margin of the list */
+  padding-left: 0; /* Remove the default padding of the list */
+  list-style: none;
+  list-style-position: inside; /* Optional: list items will align with the text */
+  /* line-height: 2rem; */
+}
+.footer-a{
+    text-decoration: none;
+    color:white;
+}
+.footer-li{
+    cursor: pointer;
+    line-height: 1.6rem;
+}
+.footer-li:hover::before {
+    content:"- ";
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .col-6, .col-3 {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  }

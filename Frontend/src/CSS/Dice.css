@@ -1,0 +1,46 @@
+/* Dice.css */
+.dice-container {
+  position: relative; /* Position relative to contain the ball and line */
+  width: 100%; /* Full viewport width */
+  height: 200px; /* Height of the container */
+  overflow: hidden; /* Hide overflow to keep the ball within the viewport */
+}
+
+.ball {
+  width: 100px; /* Ball size */
+  height: 100px; /* Ball size */
+  background-color: #ff6347; /* Ball color */
+  border-radius: 50%; /* Make it circular */
+  display: flex;
+  align-items: center; /* Center face vertically */
+  justify-content: center; /* Center face horizontally */
+  position: absolute; /* Absolute positioning for animation */
+  transform-origin: center; /* Rotate around the center */
+  transition: transform 0.1s; /* Smooth transform transition */
+  top: 10%; /* Adjusted top position to move the ball down */
+  transform: translateY(-50%); /* Adjust vertical position to center */
+}
+
+.face {
+  width: 40px; /* Width of the face */
+  height: 40px; /* Height of the face */
+  background: white; /* Face color */
+  border-radius: 50%; /* Circular face */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.face::before {
+  content: "😊"; /* Emoji for face */
+  font-size: 24px; /* Size of the emoji */
+}
+
+.line {
+  position: absolute; /* Ensure line is above the ball */
+  width: 100%; /* Full width of the container */
+  height: 3px; /* Height of the line */
+  background-color: #333; /* Line color */
+  top: 60%; /* Center the line vertically in the container */
+  transform: translateY(-50%); /* Adjust position to center */
+}

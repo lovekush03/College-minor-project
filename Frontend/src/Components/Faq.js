@@ -1,6 +1,6 @@
 import React from "react";
 import "../CSS/Faq.css";
-import { faqs } from "../Resources/FaqContent";
+import { faqs } from "../assets/FaqContent.js";
 
 function Faq() {
   console.log(faqs[0]);

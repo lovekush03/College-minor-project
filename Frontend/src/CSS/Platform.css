@@ -1,0 +1,108 @@
+/* Container for the entire component */
+.platforms-container {
+  text-align: center; /* Center the heading */
+  padding: 20px;
+}
+
+/* Enhanced Heading Styling */
+.platforms-heading {
+  font-size: 3em; /* Larger font size */
+  margin-bottom: 20px;
+  color: #333; /* Text color */
+  font-weight: bold;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Spacing between letters */
+  position: relative; /* For pseudo-element positioning */
+  display: inline-block;
+  animation: headingAnimation 2s ease-out;
+}
+
+/* Gradient text effect */
+.platforms-heading::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient colors */
+  background-clip: text; /* Clip gradient to text */
+  -webkit-background-clip: text; /* For WebKit browsers */
+  color: transparent; /* Hide default text color */
+  z-index: -1; /* Place behind the text */
+}
+
+/* Adding a text shadow for depth */
+.platforms-heading {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for enhanced heading animation */
+@keyframes headingAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Platform card styling */
+.platform-card {
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 10px;
+}
+
+.platform-card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #e0e0e0, #f9f9f9);
+}
+
+/* Platform logo styling */
+.platform-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Platform name styling */
+.platform-name {
+  font-size: 1.8em;
+  margin: 10px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Platform description styling */
+.platform-description {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Flexbox container for the platforms */
+.platform-container {
+  display: flex;
+  justify-content: center; /* Center align the platform cards */
+  flex-wrap: wrap; /* Allows wrapping to the next line if the screen is too small */
+  gap: 20px; /* Spacing between the cards */
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .platform-card {
+    max-width: 100%; /* On smaller screens, the cards take full width */
+  }
+}
