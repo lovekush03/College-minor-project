@@ -6,14 +6,14 @@ function Faq() {
   console.log(faqs[0]);
   return (
     <div>
-      <div className="container">
+      <div className="container faq-container">
         <h1 className="text-center p-4 font-heading" style={{fontWeight:"700"}}>Frequently Asked Questions</h1>
         <div className="accordion" id="accordionExample">
           {faqs.map((faq) => (
           <div className="accordion-item" key={faq.id}>
             <h2 className="accordion-header">
               <button
-                className="accordion-button collapsed font-heading heading"
+                className="accordion-button collapsed font-heading faq-heading"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={`#collapse${faq.id}`}
@@ -28,7 +28,7 @@ function Faq() {
               className="accordion-collapse collapse"
               data-bs-parent="#accordionFlushExample"
             >
-              <div className="accordion-body font-text text">
+              <div className="accordion-body font-text faq-text">
                 {faq.ans}
               </div>
             </div>

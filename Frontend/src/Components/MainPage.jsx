@@ -32,7 +32,7 @@ function MainPage() {
   }, []);
 
   return (
-    <div className='main-page-container'>
+    <div className='main-page-container' style={{overflowX:"hidden"}}>
       <div className='text-and-buttons'>
         <h1>Empowering the next gen of coders</h1>
         <div className='buttons-container'>

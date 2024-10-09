@@ -1,17 +1,15 @@
 
-/* .container{
-    max-width:70vw;
-} */
+
 .font-heading{
     font-family: "Lato", sans-serif;
 }
 .font-text{
     font-family: "Geologica",sans-serif;
 }
-.heading{
+.faq-heading{
     font-weight:600;
 }
-.text{
+.faq-text{
     font-weight:200;
 }
 
@@ -19,7 +17,7 @@
 
 
 /* General Styles */
-.container {
+.faq-container {
     max-width: 800px;
     margin: auto;
     padding: 0 20px;

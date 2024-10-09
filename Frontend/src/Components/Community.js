@@ -36,7 +36,7 @@ function Community() {
   }, []);
 
   return (
-    <div className="red">
+    <div style={{overflowX:"hidden"}}>
       {/* Hero Section */}
       <section className="hero-section py-5">
         <div className="container">

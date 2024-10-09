@@ -62,18 +62,18 @@ export default function Signup() {
 
   return (
     <div className="login-page">
-      <div className="main-container container">
-        <div className="left">
-          <div className="logo-container animate__animated animate__fadeInDown m-auto mb-3">
-            <h1 className="logo text-light">CodeNest</h1>
-            <p className="logo-text text-center text-light">CN</p>
+      <div className="login-main-container container">
+        <div className="login-left">
+          <div className="login-logo-container animate__animated animate__fadeInDown m-auto mb-3">
+            <h1 className="login-logo text-light">CodeNest</h1>
+            <p className="login-logo-text text-center text-light">CN</p>
           </div>
           <h2 className="animate__animated animate__fadeInUp text-center">
             Empowering The Next Generation of Coders
           </h2>
         </div>
-        <div className="right">
-          <div className="form-container animate__animated animate__fadeInUp">
+        <div className="login-right">
+          <div className="login-form-container animate__animated animate__fadeInUp">
             <h1 className="pb-1 font-heading">Sign Up</h1>
             <p className="font-text">Hi, Welcome </p>
             <form onSubmit={handleSubmit}>

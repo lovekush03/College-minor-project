@@ -2,37 +2,37 @@
 .login-page {
     padding: 20px;
   }
-  .logo-container {
+  .login-logo-container {
     background-color: black;
     width: max-content;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     overflow-y: hidden;
 }
-.logo {
+.login-logo {
     margin: 2px 10px;
     font-size: 4rem;
     overflow-y: hidden;
     font-family: "Lato", sans-serif;
     font-weight: 900;
 }
-.logo-text{
+.login-logo-text{
     margin-top:-12px;
     font-size:15px;
     margin-bottom: -0.1px;
 }
-  .main-container {
+  .login-main-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100vh;
   }
   
-  .left, .right {
+  .login-left, .login-right {
     width: 50%;
   }
   
-  .form-container {
+  .login-form-container {
     width: 80%;
     margin: 0 auto;
   }
@@ -109,13 +109,13 @@
       padding: 20px;
     }
   
-    .form-container {
+    .login-form-container {
       width: 100%;
     }
   }
   
   @media (max-width: 768px) {
-    h2{
+    .login-h2{
         font-size:1.5rem;
     }
     .logo {
@@ -140,14 +140,14 @@
   }
   
   @media (max-width: 480px) {
-    .main-container {
+    .login-main-container {
         margin-top:-70px;
       padding: 10px;
     }
-    h2{
+    .login-h2{
         font-size:1rem;
     }
-    .logo {
+    .login-logo {
       font-size: 2rem;
     }
   

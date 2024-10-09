@@ -8,8 +8,9 @@ import Faq from './Components/Faq';
 import Footer from './Components/Footer'
 import Dice from "./Components/Dice"
 import Platform from "./Components/Platform"
-// import EventsPage from './Components/EventPage';
-// import ContactPage from "./Components/ContactPage";
+import Community from './Components/Community';
+// import EventPage from './Components/EventPage';
+import ContactPage from "./Components/ContactPage";
 
 function HomePage() {
   return (
@@ -18,6 +19,7 @@ function HomePage() {
       <MainPage />
       <Dice/>
       <Platform/>
+      <Community/>
       <Faq/>
       <Footer/>
     </>
@@ -29,8 +31,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/events" element={<EventsPage />} />
-        <Route path="/contact" element={<ContactPage />} />  */}
+        {/* <Route path="/events" element={<EventPage />} /> */}
+        <Route path="/contact" element={<ContactPage />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />  
       </Routes>
