@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import "../CSS/Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  // const [confirmPassword, setConfirmPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  // const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [emailStatus, setEmailStatus] = useState('');
 
   const validateEmail = (email) => {
@@ -16,6 +17,7 @@ export default function Login() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -36,26 +38,28 @@ export default function Login() {
       setPasswordError('');
     }
 
-    if (password !== confirmPassword) {
-      setConfirmPasswordError('Passwords do not match');
-      valid = false;
-    } else {
-      setConfirmPasswordError('');
-    }
+    // if (password !== confirmPassword) {
+    //   setConfirmPasswordError('Passwords do not match');
+    //   valid = false;
+    // } else {
+    //   setConfirmPasswordError('');
+    // }
 
     if (valid) {
       try {
         // Example login request
-        const response = await axios.post('/api/login', { email, password });
+        const response = await axios.post('http://localhost:3001/api/login', { email, password });
         if (response.data.success) {
           setEmailStatus('Login successful');
           // Redirect or update UI after successful login
+          navigate("/");
         } else {
           setEmailStatus('Login failed');
         }
       } catch (error) {
+        const message = error.response?.data?.message;
         console.error('Login Error:', error);
-        setEmailStatus('Error during login');
+        setEmailStatus((message || 'Unknown error'));
       }
     }
   };
@@ -100,7 +104,7 @@ export default function Login() {
                 />
                 {passwordError && <div className="text-danger">{passwordError}</div>}
               </div>
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <label htmlFor="confirmPassword" className="form-label font-text">Confirm Password</label>
                 <input
                   type="password"
@@ -110,17 +114,13 @@ export default function Login() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
                 {confirmPasswordError && <div className="text-danger">{confirmPasswordError}</div>}
-              </div>
+              </div> */}
               <div className="d-flex justify-content-between">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="flexCheckDefault"
-                  />
-                  <label className="form-check-label font-text" htmlFor="flexCheckDefault">Remember Me</label>
+                <div className="text-primary font-text">
+                  {/* Provide Route Link to Sigup Component */}
+                  <Link to="/signup">Don't have Account</Link>
                 </div>
-                <div className="text-primary font-text">Forgot Password?</div>
+                {/* <div className="text-primary font-text">Forgot Password?</div> */}
               </div>
               <button type="submit" className="btn btn-primary text-light w-100 mt-2 font-text">
                 Login

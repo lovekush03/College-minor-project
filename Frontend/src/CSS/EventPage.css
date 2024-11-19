@@ -1,6 +1,5 @@
-/* General styles */
-body {
-  font-family: "Montserrat", sans-serif;
+/* General styles for the entire page */
+.events-page-body {
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
@@ -8,7 +7,7 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 
-/* Fade-in animation for the whole page */
+/* Fade-in animation for the page */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -18,8 +17,8 @@ body {
   }
 }
 
-/* Container for the entire event page */
-.events-page {
+/* Main container for the events page */
+.events-page-container {
   text-align: center;
   padding: 40px 20px;
   background-color: #f9f9f9;
@@ -39,7 +38,7 @@ body {
 }
 
 /* Stylish heading for the title */
-.page-title {
+.events-page-title {
   font-size: 3.5em;
   font-weight: bold;
   background: linear-gradient(90deg, #18537a, #3498db, #67e8f9);
@@ -64,12 +63,12 @@ body {
 }
 
 /* Glow effect on hover */
-.page-title:hover {
+.events-page-title:hover {
   text-shadow: 0 0 10px rgba(24, 83, 122, 0.8);
 }
 
-/* Styling for the event container */
-.container {
+/* Styling for the event cards container */
+.events-card-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -90,7 +89,7 @@ body {
 }
 
 /* Event card styles */
-.item-container {
+.event-card-item {
   position: relative;
   width: 320px;
   height: 570px;
@@ -102,25 +101,26 @@ body {
 }
 
 /* Scale-up effect on hover */
-.item-container:hover {
+.event-card-item:hover {
   transform: scale(1.08);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Image container */
-.img-container img {
+.event-card-img-container img {
   width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 /* Event information container */
-.body-container {
+.event-card-body {
   position: relative;
   padding: 20px;
 }
 
-.overlay {
+/* Overlay effect */
+.event-card-overlay {
   position: absolute;
   width: 100%;
   height: 400px;
@@ -129,45 +129,45 @@ body {
   transition: height 0.4s ease, opacity 0.2s ease;
 }
 
-.item-container:hover .overlay {
+.event-card-item:hover .event-card-overlay {
   opacity: 1;
   height: 150px;
 }
 
 /* Event details */
-.event-info {
+.event-card-info {
   background-color: #fff;
   padding: 16px;
   text-align: center;
 }
 
-.title {
+.event-card-title {
   font-size: 1.7em;
   font-weight: bold;
   color: #18537a;
   margin: 12px 0;
 }
 
-.price {
+.event-card-price {
   font-size: 1.2em;
   color: #e74c3c;
 }
 
-.separator {
+.event-card-separator {
   width: 50px;
   height: 5px;
   background-color: #18537a;
   margin: 10px auto;
 }
 
-.additional-info {
+.event-card-additional-info {
   border-top: 1px solid #bbb;
   padding: 15px;
   margin-top: 10px;
 }
 
 /* Action button */
-.action {
+.event-card-action {
   color: #fff;
   border: 2px solid #fff;
   background-color: #3498db;
@@ -185,10 +185,10 @@ body {
   border-radius: 6px;
 }
 
-.item-container:hover .action {
+.event-card-item:hover .event-card-action {
   top: 50px;
 }
 
-.action:hover {
+.event-card-action:hover {
   background-color: #2980b9;
 }

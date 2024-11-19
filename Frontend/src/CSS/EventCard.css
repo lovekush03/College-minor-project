@@ -1,12 +1,12 @@
 /* Reset and Base Styles */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-}
+} */
 
-body {
+.event-card-body {
   min-height: 100vh;
   width: 100%;
   font-size: 16px;
@@ -17,17 +17,8 @@ body {
   align-items: center;
 }
 
-/* Container Styles */
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Item Container Styles */
-.item-container {
+/* Event Card Container Styles */
+.event-card-container {
   position: relative;
   margin: 24px;
   width: 320px;
@@ -40,14 +31,14 @@ body {
   transition: box-shadow 0.3s, transform 0.3s;
 }
 
-.item-container:hover {
+.event-card-container:hover {
   box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
 
 /* Image Container Styles */
-.img-container,
-.body-container {
+.event-card-img-container,
+.event-card-body-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -55,21 +46,21 @@ body {
   height: 100%;
 }
 
-.img-container img {
+.event-card-img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /* Body Container Styles */
-.body-container {
+.event-card-body-container {
   position: relative;
   padding: 16px;
   background: rgba(255, 255, 255, 0.8);
 }
 
 /* Overlay Styles */
-.overlay {
+.event-card-overlay {
   position: absolute;
   width: 100%;
   height: 400px;
@@ -78,13 +69,13 @@ body {
   transition: height linear 0.4s, opacity linear 0.2s;
 }
 
-.item-container:hover .overlay {
+.event-card-container:hover .event-card-overlay {
   opacity: 1;
   height: 150px;
 }
 
 /* Event Info Styles */
-.event-info {
+.event-card-info-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,8 +83,8 @@ body {
   padding: 8px;
 }
 
-.title,
-.price {
+.event-card-title,
+.event-card-price {
   color: #18537a;
   font-size: 1.5em;
   font-weight: bold;
@@ -101,44 +92,46 @@ body {
   margin: 12px;
 }
 
-.info {
+.event-card-location,
+.event-card-date,
+.event-card-description {
   letter-spacing: 0.5px;
   margin-bottom: 6px;
 }
 
-.separator {
+.event-card-separator {
   width: 20%;
   height: 6px;
   background-color: #17537a;
   margin-bottom: 16px;
 }
 
-.additional-info {
+.event-card-additional-info {
   border-top: 1px solid #bbb;
   margin-top: 12px;
   padding: 28px;
   padding-bottom: 0;
 }
 
-.additional-info .info {
+.event-card-additional-info .event-card-date {
   font-size: 0.9em;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.info i {
+.event-card-date i {
   color: #18537a;
   font-size: 1.1em;
   margin-right: 4px;
 }
 
-.info span {
+.event-card-description span {
   color: #18537a;
   font-weight: bolder;
 }
 
 /* Action Button Styles */
-.action {
+.event-card-action-button {
   color: #fff;
   border: 3px solid #fff;
   background-color: transparent;
@@ -157,32 +150,32 @@ body {
   transition: background-color 0.4s, top 0.4s;
 }
 
-.item-container:hover .action {
+.event-card-container:hover .event-card-action-button {
   top: 50px;
 }
 
-.action:hover {
+.event-card-action-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .item-container {
+  .event-card-container {
     width: 100%;
     height: auto;
     margin: 12px 0;
   }
 
-  .overlay {
+  .event-card-overlay {
     height: 100px;
   }
 
-  .title,
-  .price {
+  .event-card-title,
+  .event-card-price {
     font-size: 1.2em;
   }
 
-  .additional-info {
+  .event-card-additional-info {
     padding: 16px;
   }
 }

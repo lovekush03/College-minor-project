@@ -1,34 +1,36 @@
 import React from 'react';
 import "../CSS/EventCard.css";
 
-const EventCard = ({ imgSrc, title, location, price, date, description }) => {
+const EventCard = ({ imgSrc, title, location, price, date, description, link }) => {
   return (
-    <div className="item-container">
-      <div className="img-container">
+    <div className="event-card-container">
+      {/* <div className="event-card-img-container">
         <img src={imgSrc} alt={title} />
-      </div>
+      </div> */}
 
-      <div className="body-container">
-        <div className="overlay"></div>
+      <div className="event-card-body-container">
+        <div className="event-card-overlay"></div>
 
-        <div className="event-info">
-          <p className="title">{title}</p>
-          <div className="separator"></div>
-          <p className="info">{location}</p>
-          <p className="price">{price}</p>
+        <div className="event-card-info-container">
+          <p className="event-card-title">{title}</p>
+          <div className="event-card-separator"></div>
+          <p className="event-card-location">{location}</p>
+          <p className="event-card-price">{price}</p>
 
-          <div className="additional-info">
-            <p className="info">
+          <div className="event-card-additional-info">
+            <p className="event-card-date">
               <i className="far fa-calendar-alt"></i>
               {date}
             </p>
 
-            <p className="info description">
+            <p className="event-card-description">
               {description} <span>more...</span>
             </p>
           </div>
         </div>
-        <button className="action">Register it</button> {/* Change button text here */}
+        <a href={link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+          <button className="event-card-action-button">Register it</button> {/* Change button text here */}
+        </a>
       </div>
     </div>
   );

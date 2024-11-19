@@ -2,28 +2,35 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
-// const jwt = require('jsonwebtoken');
 const User = require("./models/User")
 const db = require("./db")
 const cors = require('cors');
+const {jwtAuthMiddleware, generateToken} = require("./jwt.js");
 const app = express();
-// const passwordHash = await bcrypt.hash(password, 10);
+require('dotenv').config();
 app.use(cors());
 app.use(bodyParser.json());
 
 
 // Registration endpoint
-app.post('/api/register', async (req, res) => {
+app.post('/api/signup', async (req, res) => {
   const { email, password } = req.body;
 
   try {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ success: false, message: 'Email already registered' });
+      return res.status(401).json({ success: false, message: 'Email already registered' });
     }
-    const newUser = new User({ email, password });
-    await newUser.save();
-    res.status(201).json({ success: true, message: 'User registered successfully' });
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ email, password: hashedPassword });
+    const response = await newUser.save();
+    const payload = {
+      id : response.id
+    }
+    console.log(JSON.stringify(payload));
+    const token = generateToken(payload);  // generate jwt token for the user
+    res.status(201).json({ success: true, message: 'User registered successfully' ,token});
   } catch (error) {
     console.error('Registration Error:', error);
     res.status(500).json({ success: false, message: 'Internal Server Error' });
@@ -39,11 +46,13 @@ app.post('/api/login', async (req, res) => {
     if (!user) {
       return res.status(401).json({ success: false, message: 'User not found' });
     }
-
-    const passwordMatch = await bcrypt.compare(password, user.passwordHash);
+    const passwordMatch = await bcrypt.compare(password, user.password);
     if (passwordMatch) {
-      const token = jwt.sign({ email: user.email }, 'your_jwt_secret', { expiresIn: '1h' });
-      res.json({ success: true, token });
+      const payload = {
+        id: user.id
+      };
+      const token = generateToken(payload);
+      res.status(200).json({ success: true, token });
     } else {
       res.status(401).json({ success: false, message: 'Incorrect password' });
     }
@@ -53,25 +62,10 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// Middleware to protect routes
-const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
 
-  if (token == null) return res.sendStatus(401);
-
-  jwt.verify(token, 'your_jwt_secret', (err, user) => {
-    if (err) return res.sendStatus(403);
-    req.user = user;
-    next();
-  });
-};
-
-// Example protected route
-app.get('/api/protected', authenticateToken, (req, res) => {
-  res.json({ message: 'This is a protected route', user: req.user });
-});
-
-app.listen(3001, () => {
-  console.log('Server is running on port 3001');
+app.get("/",(req,res) => {
+  res.send("Backend Server On port 3005");
+})
+app.listen(3005, () => {
+  console.log('Server is running on port 3005');
 });

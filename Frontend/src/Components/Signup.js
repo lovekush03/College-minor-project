@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link , useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "../CSS/Login.css";
 
@@ -11,6 +12,7 @@ export default function Signup() {
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [emailStatus, setEmailStatus] = useState('');
 
+  const navigate = useNavigate();
   const validateEmail = (email) => {
     // Basic regex for email validation
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -45,17 +47,22 @@ export default function Signup() {
 
     if (valid) {
       try {
+        const requestData = {email,password};
+        console.log(requestData);
         // Example login request
-        const response = await axios.post('/api/login', { email, password });
+        const response = await axios.post('http://localhost:3001/api/signup',requestData);
+
         if (response.data.success) {
           setEmailStatus(response.data.message);
           // Redirect or update UI after successful login
-        } else {
+          navigate("/");
+        } else{
           setEmailStatus(response.data.message);
         }
       } catch (error) {
-        console.error('Login Error:', error);
-        setEmailStatus('Error during login');
+        const message = error.response?.data?.message;
+        console.error('SignUp Error:', error);
+        setEmailStatus((message || 'Unknown error'));
       }
     }
   };
@@ -111,7 +118,7 @@ export default function Signup() {
                 />
                 {confirmPasswordError && <div className="text-danger">{confirmPasswordError}</div>}
               </div>
-              <div className="txt">Already Have an account?</div>
+              <div className="txt text-primary font-text"><Link to="/login">Already Have an account?</Link></div>
               <button type="submit" className="btn btn-primary text-light w-100 mt-2 font-text">
                 Sign Up
               </button>

@@ -4,10 +4,6 @@ import BlogNav from "./BlogNav";
 import MainBlogPost from "./MainBlogPost";
 import BlogPost from "./BlogPost";
 import Footer from "./Footer.js";
-// //Carousel for Blog Posts
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
 
 const BlogPage = () => {
   const [theme , setTheme] = useState("light");

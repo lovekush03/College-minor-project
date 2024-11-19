@@ -3,10 +3,7 @@ const mongoose = require('mongoose');
 // Replace with your MongoDB connection string
 const mongoUri = 'mongodb://localhost:27017/codenest';
 
-mongoose.connect(mongoUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(mongoUri)
 
 //Get Default connection
 //Mongoogse maintains a default connection object representing the mongoDB connection

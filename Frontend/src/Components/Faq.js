@@ -6,7 +6,7 @@ function Faq() {
   console.log(faqs[0]);
   return (
     <div>
-      <div className="container faq-container">
+      <div className="container faq-container pb-4">
         <h1 className="text-center p-4 font-heading" style={{fontWeight:"700"}}>Frequently Asked Questions</h1>
         <div className="accordion" id="accordionExample">
           {faqs.map((faq) => (

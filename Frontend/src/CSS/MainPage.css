@@ -12,6 +12,7 @@
   background-size: cover; /* Cover the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
+  overflow-x: hidden;
 }
 
 .text-and-buttons {
@@ -41,10 +42,9 @@
 .jobs-button {
   background-color: #007bff; /* Button background color */
   color: white; /* Button text color */
-  border: none;
-  border-radius: 50%; /* Circular buttons */
-  width: 100px; /* Increased width for larger buttons */
-  height: 100px; /* Increased height for larger buttons */
+  border: none; 
+  padding:2vh 3vw;
+  border-radius: 20px;
   display: flex;
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
